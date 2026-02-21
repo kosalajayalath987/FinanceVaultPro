@@ -12,34 +12,6 @@ A robust, enterprise-grade Petty Cash Management System built with Python and My
     ├── requirements.txt     
     └── README.md           
     
-🗄️ Database Architecture
-
-    Users
-
-  Column   	    |     Constraints |
-  user_id	    	|     Primary Key |
-  username 	    |     UNIQUE      |
-  password_hash	|     NOT NULL    |
-  role		      |     NOT NULL    |
-  
-  Funds
-  
-  Column		 |   Constraints	    |
-  fund_id	   |   Primary Key      |
-  user_id	   |   Foreign Key      |
-  fund_name	 |   NOT NULL	        |
-  balance	   |   DEFAULT(Decimal) |
-
-  Transactions
-  
-  Column       |	  Constraints 	|
-  tx_id	       |    Primary Key 	|
-  fund_id      |	  Foreign Key	  |
-  amount	     |    NOT NULL 	    |
-  description  |	  NOT NULL 	    |
-  created_at   |	  DEFAULT NOW() |
-
-    
 
 ✨ Features
 * **Real-time Ledger:** Track expenses and top-ups instantly.
@@ -57,9 +29,7 @@ A robust, enterprise-grade Petty Cash Management System built with Python and My
 * **Language:** Python 3.x
 * **GUI Framework:** Tkinter
 * **Database:** MySQL
-* **Reporting:** ReportLab (PDF Generation)
-
-
+* **Reporting:** ReportLab / fpdf (PDF Generation)
 
 🧪 Guided Test Walkthrough
 * Once the app is running, try these steps to verify the DR/CR logic:
@@ -68,6 +38,42 @@ A robust, enterprise-grade Petty Cash Management System built with Python and My
 * Expense (Debit): Select Debit (Expense), enter "Office Supplies", an amount (e.g., 200), and choose an Authorizer. Click Post.
 * Observe: A PDF voucher is instantly generated in the /output folder.
 * Audit: Click Full Audit PDF in the sidebar to generate a complete transaction history report.
+
+🗄️ Database Structure
+  ### **Users**
+  
+Column | Type |	Constraints | Description|
+:----  |:---- |:----|:----
+user_id	INT |Primary Key, Auto-Inc | Unique identifier for each system user.|
+username |VARCHAR |UNIQUE |Unique login name.|
+password_hash |VARCHAR	|NOT NULL |Bcrypt hashed password for secure login.|
+role |VARCHAR |NOT NULL	|User permissions (Admin, Custodian, etc.)|
+
+### **Funds**
+
+Column |Type |Constraints |Description |
+:----  |:---- |:----|:----
+fund_id |INT |Primary Key, Auto-Inc |Unique identifier for the fund.|
+user_id |INT |Foreign Key |Links to users.user_id (the fund owner).|
+fund_name |VARCHAR |NOT NULL |Descriptive name for the fund.|
+balance	|DECIMAL |DEFAULT 0.00|The current liquid amount available.|
+
+### **Transactions**
+
+Column |Type |Constraints |Description
+ :----  |:---- |:----|:----
+ tx_id  |INT |Primary Key, Auto-Inc |Unique identifier for the transaction.
+ fund_id|INT |Foreign Key |Links to funds.fund_id.
+ amount |DECIMAL |NOT NULL |The monetary value of the transaction.
+ description |VARCHAR|-	|Narration or reason for the movement.
+ created_at |TIMESTAMP |DEFAULT NOW() |Automatic date and time of record.
+
+    
+
+
+        
+
+
 
 
 
