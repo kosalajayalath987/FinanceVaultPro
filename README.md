@@ -2,16 +2,44 @@ FinanceVaultPro - Petty Cash Management
 
 A robust, enterprise-grade Petty Cash Management System built with Python and MySQL. Features a real-time DR/CR (Debit/Credit) ledger, automated PDF voucher generation, and comprehensive audit reporting for corporate financial control.
 
+📂 Project Structure
 
-Project Structure
-├── assets/              # (Optional) Store app icons or logos
-├── output/              # Folder where generated PDFs will be saved
-├── .gitignore           # Tells GitHub which files to ignore (PDFs, pycache)
-├── database_setup.py    # Script to initialize the MySQL database/tables
-├── main.py              # The main entry point to run the application
-├── requirements.txt     # List of Python dependencies
-└── README.md            # Project documentation (The most important part!)
+    ├── assets/
+    ├── output/              
+    ├── .gitignore          
+    ├── database_setup.py    
+    ├── main.py             
+    ├── requirements.txt     
+    └── README.md           
+    
+🗄️ Database Architecture
 
+    Users
+
+  Column   	    |     Constraints |
+  user_id	    	|     Primary Key |
+  username 	    |     UNIQUE      |
+  password_hash	|     NOT NULL    |
+  role		      |     NOT NULL    |
+  
+  Funds
+  
+  Column		 |   Constraints	    |
+  fund_id	   |   Primary Key      |
+  user_id	   |   Foreign Key      |
+  fund_name	 |   NOT NULL	        |
+  balance	   |   DEFAULT(Decimal) |
+
+  Transactions
+  
+  Column       |	  Constraints 	|
+  tx_id	       |    Primary Key 	|
+  fund_id      |	  Foreign Key	  |
+  amount	     |    NOT NULL 	    |
+  description  |	  NOT NULL 	    |
+  created_at   |	  DEFAULT NOW() |
+
+    
 
 ✨ Features
 * **Real-time Ledger:** Track expenses and top-ups instantly.
