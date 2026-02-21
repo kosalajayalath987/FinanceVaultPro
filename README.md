@@ -1,4 +1,4 @@
-#### **FinanceVaultPro - Petty Cash Management** ####
+#### **FinanceVaultPro - Petty Cash Management**
 
 A robust, enterprise-grade Petty Cash Management System built with Python and MySQL. Features a real-time DR/CR (Debit/Credit) ledger, automated PDF voucher generation, and comprehensive audit reporting for corporate financial control.
 
@@ -42,7 +42,7 @@ A robust, enterprise-grade Petty Cash Management System built with Python and My
 * Audit: Click Full Audit PDF in the sidebar to generate a complete transaction history report.
 
 
-###**🗄️ Database Structure**
+### **🗄️ Database Structure**
 
 ## **Users**
 Column | Type |	Constraints | Description|
