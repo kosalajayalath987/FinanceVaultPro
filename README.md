@@ -1,6 +1,6 @@
 FinanceVaultPro - Petty Cash Management
 
-A robust Python-based desktop application for managing corporate petty cash using a Debit/Credit (DR/CR) system.
+A robust, enterprise-grade Petty Cash Management System built with Python and MySQL. Features a real-time DR/CR (Debit/Credit) ledger, automated PDF voucher generation, and comprehensive audit reporting for corporate financial control.
 
 ✨ Features
 * **Real-time Ledger:** Track expenses and top-ups instantly.
