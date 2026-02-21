@@ -1,0 +1,8 @@
+MICRO CASH VOUCHER
+====================
+User: 
+ID: 
+Amount: 1000.00
+Category: 
+Description: 
+Date: 2026-02-09 21:37:36.085769

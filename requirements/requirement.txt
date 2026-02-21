@@ -1,0 +1,8 @@
+# Database connectivity
+mysql-connector-python==8.3.0
+
+# PDF Generation and Reporting
+reportlab==4.1.0
+
+# GUI designed
+Tkinter
