@@ -69,6 +69,15 @@ amount |DECIMAL |NOT NULL |The monetary value of the transaction.
 description |VARCHAR|-	|Narration or reason for the movement.
 created_at |TIMESTAMP |DEFAULT NOW() |Automatic date and time of record.
 
+
+### **Screenshot**
+
+"https://github.com/user-attachments/assets/66933663-84bd-4297-8761-e08f7a987bb8" />
+
+"https://github.com/user-attachments/assets/35cad59a-d310-4697-bf5c-fcdb8892067d" />
+
+"https://github.com/user-attachments/assets/dea057ed-96db-4a4b-a057-c81ab38a8438" />
+
     
 
 
