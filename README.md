@@ -44,7 +44,7 @@ A robust, enterprise-grade Petty Cash Management System built with Python and My
 
 ### **🗄️ Database Structure**
 
-# **Users**
+## **Users**
 Column | Type |	Constraints | Description|
 :----  |:---- |:----|:----
 user_id	INT |Primary Key, Auto-Inc | Unique identifier for each system user.|
@@ -52,7 +52,7 @@ username |VARCHAR |UNIQUE |Unique login name.|
 password_hash |VARCHAR	|NOT NULL |Bcrypt hashed password for secure login.|
 role |VARCHAR |NOT NULL	|User permissions (Admin, Custodian, etc.)|
 
-# **Funds**
+## **Funds**
 Column |Type |Constraints |Description |
 :----  |:---- |:----|:----
 fund_id |INT |Primary Key, Auto-Inc |Unique identifier for the fund.|
@@ -60,7 +60,7 @@ user_id |INT |Foreign Key |Links to users.user_id (the fund owner).|
 fund_name |VARCHAR |NOT NULL |Descriptive name for the fund.|
 balance	|DECIMAL |DEFAULT 0.00|The current liquid amount available.|
 
-# **Transactions**
+## **Transactions**
 Column |Type |Constraints |Description
 :----  |:---- |:----|:----
 tx_id  |INT |Primary Key, Auto-Inc |Unique identifier for the transaction.
